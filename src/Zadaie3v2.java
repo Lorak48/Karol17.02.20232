@@ -1,21 +1,21 @@
-import javax.print.attribute.HashDocAttributeSet;
 import java.util.Scanner;
 
 public class Zadaie3v2 {
     public static void main(String[] args) {
-        Scanner klawiatura = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Podaj wagę w kilogramach: ");
+        double weight = scanner.nextDouble();
+        System.out.print("Podaj wzrost w metrach: ");
+        double height = scanner.nextDouble();
 
-        double kg;
-        System.out.println("Podaj swoja wage w kg");
-        kg = klawiatura.nextInt();
-        klawiatura.nextLine();
-        double m;
-        System.out.println("Podaj swoj wzrost w m ");
-        m = klawiatura.nextInt();
-
-        double bmi=kg/(m*2);
-
-        if ((bmi>=18.5)&&(bmi<=25));
-
+        double bmi = weight / (height * height);
+        if (bmi >= 18.5 && bmi <= 25) {
+            System.out.println("Twoja waga jest optymalna.");
+        } else if (bmi < 18.5) {
+            System.out.println("Masz niedowagę.");
+        } else {
+            System.out.println("Masz nadwagę.");
+        }
     }
 }
+
